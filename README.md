@@ -1,1 +1,3 @@
-# skku-predictive-modeling
+# skku-predictive-modeling1
+
+sooyeanJung
