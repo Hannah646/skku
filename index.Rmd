@@ -1,0 +1,17 @@
+---
+title: "Sooyean Jung"
+image: "jsy.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: GitHub
+    url: "https://github.com/Hannah646"
+  - label: Email
+    url: "swj03030@gmail.com"
+output:
+  postcards::jolla
+---
+ 
+I am a classically trained data scientist living in the San Francisco Bay Area. 
+Currently I work on the Oculus team at Facebook. I love talking about baseball, 
+true crime podcasts, and causal inference.
