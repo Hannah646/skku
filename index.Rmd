@@ -1,17 +1,37 @@
 ---
 title: "Sooyean Jung"
 image: "jsy.jpg"
+
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
   - label: GitHub
     url: "https://github.com/Hannah646"
   - label: Email
     url: "swj03030@gmail.com"
 output:
   postcards::jolla
+
+site: distill::distill_website
 ---
- 
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+
+
+
+### Hi Guys! 
+Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea.
+This semester, I will learn *Applied Statistics* with R and update my portfolio on this website.
+
+### Education
+**Actuarial Science** | Sungkyunkwan University,2020-
+**Mathematics** | Inha University,2015-2019
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
