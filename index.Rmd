@@ -8,7 +8,7 @@ links:
   - label: Email
     url: "swj03030@gmail.com"
 output:
-  postcards::jolla
+  postcards::trestles
 
 site: distill::distill_website
 ---
@@ -18,6 +18,8 @@ site: distill::distill_website
 ### Hi Guys! 
 Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea.
 This semester, I will learn *Applied Statistics* with R and update my portfolio on this website.
+
+
 
 ### Education
 **Actuarial Science** | Sungkyunkwan University,2020-
