@@ -8,7 +8,7 @@ output: distill::distill_article
 ```{r setup}
 library(AmesHousing)
 library(dplyr)
-library(ggplot)
+library(ggplot2)
 ```
 
 ## 2. 데이터 파악
@@ -17,7 +17,8 @@ library(ggplot)
 미국 Ames지역에 있는 2930개의 주택통계정보를 담은 AmesHousing 데이터를 이용할 것이
 
 ```{r AmesHousing}
-summary(AmesHousing)
+AmesHousing :: ames_raw
+summary(ames_raw)
 ```
 
 ## 3. 데이터 전처리
