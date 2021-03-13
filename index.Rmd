@@ -22,8 +22,8 @@ This semester, I will learn *Applied Statistics* with R and update my portfolio 
 
 
 ### Education
-**Actuarial Science** | Sungkyunkwan University,2020-
-**Mathematics** | Inha University,2015-2019
+   **Actuarial Science** | Sungkyunkwan University,2020-
+   **Mathematics** | Inha University,2015-2019
 
 
 ```{r setup, include=FALSE}
