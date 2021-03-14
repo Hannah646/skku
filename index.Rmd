@@ -15,8 +15,8 @@ site: distill::distill_website
 
 
 
-### Hi Guys! 
-Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea.
+### WElCOME! 
+I am a student studying at Sungkyunkwan University in South Korea.
 This semester, I will learn *Applied Statistics* with R and update my portfolio on this website.
 
 
