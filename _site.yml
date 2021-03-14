@@ -6,10 +6,14 @@ description: |
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
-      href: index.html
-    -text: "Portfolio"
-    menu:
-    - text: "ameshousing"
-      href: ameshousing.html
+  - text: "Home"
+    href: index.html
+  - text: "Portfolio"
+    href: Portfolio.html
+    
+collections:
+  posts:
+    categories: true
+    categories_metadata: true
+    authors_metadata: true
 output: distill::distill_article

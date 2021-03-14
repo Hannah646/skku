@@ -18,5 +18,5 @@ library(distill)
 create_website(dir=".",title="iyo-distill",gh_pages=TRUE)
 
 library(distill)
-create_post("AmesHousing", slug = "AmesHousing")
+create_post("AmesHousing", slug = "HW_AmesHousing")
 
