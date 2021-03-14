@@ -1,26 +1,18 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-03-02T20:05:55+00:00"
-    },
-    {
       "path": "index.html",
       "title": "Sooyean Jung",
       "author": [],
-      "contents": "\n\n          \n          \n          install.packages(server)\n          \n          \n          Home\n          About\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Sooyean Jung\n            \n            \n              \n                \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            Hi Guys!\n            Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea. This semester, I will learn Applied Statistics with R and update my portfolio on this website.\n            \n            \n            Education\n            Actuarial Science | Sungkyunkwan University,2020- Mathematics | Inha University,2015-2019\n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Sooyean Jung\n            \n            \n              \n                \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              \n              Hi Guys!\n              Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea. This semester, I will learn Applied Statistics with R and update my portfolio on this website.\n              \n              \n              Education\n              Actuarial Science | Sungkyunkwan University,2020- Mathematics | Inha University,2015-2019\n              \n            \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-03-02T20:20:25+00:00"
+      "contents": "\n\n          \n          \n          Hannah\n          \n          \n          Home\n          Portfolio\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Sooyean Jung\n            \n            \n              \n                \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            Hi Guys!\n            Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea. This semester, I will learn Applied Statistics with R and update my portfolio on this website.\n            \n            \n            Education\n            Actuarial Science | Sungkyunkwan University,2020- Mathematics | Inha University,2015-2019\n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Sooyean Jung\n            \n            \n              \n                \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              \n              Hi Guys!\n              Welcome to My Website! I am a student studying at Sungkyunkwan University in South Korea. This semester, I will learn Applied Statistics with R and update my portfolio on this website.\n              \n              \n              Education\n              Actuarial Science | Sungkyunkwan University,2020- Mathematics | Inha University,2015-2019\n              \n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-03-14T04:03:04+00:00"
     },
     {
       "path": "Portfolio.html",
       "title": "Portfolio",
       "author": [],
       "contents": "\nComing Soon!\n\n\n\n",
-      "last_modified": "2021-03-02T20:05:57+00:00"
+      "last_modified": "2021-03-13T14:30:19+00:00"
     }
   ],
   "collections": []
