@@ -1,6 +1,6 @@
 ---
 title: "Sooyean Jung"
-image: "jsy.jpg"ff
+image: "jsy.jpg"
 
 links:
   - label: GitHub
