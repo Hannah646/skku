@@ -1,6 +1,6 @@
 ---
 title: "Sooyean Jung"
-image: "jsy.jpg"
+image: "jsy.jpg"ff
 
 links:
   - label: GitHub
@@ -23,6 +23,7 @@ This semester, I will learn *Applied Statistics* with R and update my portfolio 
 
 ### Education
    **Actuarial Science** | Sungkyunkwan University,2020-
+   
    **Mathematics** | Inha University,2015-2019
 
 

@@ -1,0 +1,95 @@
+---
+title: "AmesHousing"
+description: |
+  AmesHousing EDA.
+author:
+  - name: Hannah646
+date: 03-14-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: TRUE
+---
+
+
+## 1. 데이터 준비, 패키지 준비
+```{r setup}
+library(AmesHousing)
+library(dplyr)
+library(ggplot2)
+
+```
+
+```{r data, include=FALSE}
+
+AmesHousing :: ames_raw
+```
+
+## 2. 데이터 파악
+
+데이터를 분석하기에 앞서 데이터를 파악해보자.
+미국 Ames지역에 있는 2930개의 주택통계정보를 담은 AmesHousing 데이터를 이용할 것이다
+
+```{r AmesHousing}
+dim(ames_raw)
+```
+우리는 2930개의 주택에 대한 82가지 변수의 통계자료로 구성되어 있음을 알 수 있다.
+변수가 너무 많기 때문에 $SalePrice에 영향을 미치는 변수를 고려해 원하는 데이터로 가공하려고 한다.
+
+```{r}
+glimpse(ames_raw)
+```
+
+우리가 궁금해 하는 것은 $SalePrice
+위의 변수를 살펴보았을 때 관심이 가는 변수는 $ `Bldg Type`|$ `House Style`|$ `Overall Qual`|$ `Overall Cond`|$ `Year Built`
+
+
+##  3. 데이터 분석: 리모델링이 주택가격에 영향을 미칠 것인가?
+  일반적으로 건물은 노후할 수록 감가가 이루어질 것으로 예측할 수 있다. 
+  데이터를 통해 실제로 건물이 지어진지 오래될 수록 가격이 덜 나가는지 살펴보도록하자.
+  이후에 건물이 노후할 수록 sale price가 싸다면 리모델링을 할 경우 그렇지 않은 경우보다  더 높은 가격에 매매할 수 있을지 알아보도록하자.
+
+### 1)Year Built에 따른 SalePrice 차이
+
+```{r}
+yd <- ames_raw %>% select(`Year Remod/Add`, SalePrice)
+ggplot(data=yd, aes(x = `Year Remod/Add`, y = SalePrice))+geom_point()
+```
+위의 그래프를 통해 대체로 최근 지어진 건물일 수록 가격이 높아지는 것으로 볼 수 있지만, 저가의 건물들을 비교하면 건축년도와 관계없이 비슷한 가격대에 형성되어 있음을 알 수 있어서 판단이 쉽지 않다. 
+20년마다 데이터를 묶어서 1960년 이전, 1980년 이전, 2000년 이전에 지어진 주택과 200년 이후에 지어진 주택의 범주별로 주택가격을 비교해보자.
+
+
+```{r}
+ames_raw <- ames_raw %>% 
+  mutate(y_built = ifelse(`Year Built`<1960, "~1960",
+                          ifelse(`Year Built` <=1980, "~1980",
+                                 ifelse(`Year Built` <=2000, "~2000","2000~"))))
+table(ames_raw$y_built)
+qplot(ames_raw$y_built)
+```
+
+변수를 리모델링이 이루어진 주택이면 remod, 리모델링이 이루어지지 않은 주택은 nonremod.
+단, 리모델링이 1년 이내에 이루어진 주택의 경우 nonremod로 취급한다.
+
+```{r}
+
+Remod <- ames_raw %>%
+      mutate(Year = `Year Remod/Add`-`Year Built`) %>% 
+      filter(Year != 0 & Year != 1) %>% 
+      select(Order, `Year Built`, `Year Remod/Add`, Year, SalePrice) 
+
+```
+
+
+```{r}
+N_Remod <- ames_raw %>%
+      mutate(Year = `Year Remod/Add`-`Year Built`) %>% 
+     filter(Year == 0 | Year == 1) %>% 
+     select(Order, `Year Built`, `Year Remod/Add`, Year, SalePrice)
+
+
+```
+
+
+
+
