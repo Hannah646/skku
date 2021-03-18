@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["hwhouseprice_files/anchor-4.2.2/anchor.min.js","hwhouseprice_files/bowser-1.9.3/bowser.min.js","hwhouseprice_files/distill-2.2.21/template.v2.js","hwhouseprice_files/figure-html5/unnamed-chunk-2-1.png","hwhouseprice_files/figure-html5/unnamed-chunk-3-1.png","hwhouseprice_files/header-attrs-2.7.2/header-attrs.js","hwhouseprice_files/jquery-1.11.3/jquery.min.js","hwhouseprice_files/popper-2.6.0/popper.min.js","hwhouseprice_files/tippy-6.2.7/tippy-bundle.umd.min.js","hwhouseprice_files/tippy-6.2.7/tippy-light-border.css","hwhouseprice_files/tippy-6.2.7/tippy.css","hwhouseprice_files/tippy-6.2.7/tippy.umd.min.js","hwhouseprice_files/webcomponents-2.0.0/webcomponents.js","submission.csv","test.csv","train.csv"]}
+  {"type":"character","attributes":{},"value":["hwhouseprice_files/anchor-4.2.2/anchor.min.js","hwhouseprice_files/bowser-1.9.3/bowser.min.js","hwhouseprice_files/distill-2.2.21/template.v2.js","hwhouseprice_files/figure-html5/unnamed-chunk-1-1.png","hwhouseprice_files/figure-html5/unnamed-chunk-2-1.png","hwhouseprice_files/figure-html5/unnamed-chunk-3-1.png","hwhouseprice_files/figure-html5/unnamed-chunk-4-1.png","hwhouseprice_files/header-attrs-2.7.2/header-attrs.js","hwhouseprice_files/jquery-1.11.3/jquery.min.js","hwhouseprice_files/popper-2.6.0/popper.min.js","hwhouseprice_files/tippy-6.2.7/tippy-bundle.umd.min.js","hwhouseprice_files/tippy-6.2.7/tippy-light-border.css","hwhouseprice_files/tippy-6.2.7/tippy.css","hwhouseprice_files/tippy-6.2.7/tippy.umd.min.js","hwhouseprice_files/webcomponents-2.0.0/webcomponents.js","submission.csv","test.csv","train.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1493,23 +1493,6 @@ Show code
 </div>
 </details>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>data</span> <span class='op'>%&gt;%</span>
-        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>TtoS <span class='op'>=</span> <span class='va'>YrSold</span> <span class='op'>-</span> <span class='va'>YearBuilt</span>,
-               TotBath <span class='op'>=</span> <span class='va'>BsmtFullBath</span> <span class='op'>+</span> <span class='va'>BsmtHalfBath</span> <span class='op'>+</span> <span class='va'>FullBath</span> <span class='op'>+</span> <span class='va'>HalfBath</span><span class='op'>)</span>
-
-<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>test</span> <span class='op'>%&gt;%</span>
-        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>TtoS <span class='op'>=</span> <span class='va'>YrSold</span> <span class='op'>-</span> <span class='va'>YearBuilt</span>,
-               TotBath <span class='op'>=</span> <span class='va'>BsmtFullBath</span> <span class='op'>+</span> <span class='va'>BsmtHalfBath</span> <span class='op'>+</span> <span class='va'>FullBath</span> <span class='op'>+</span> <span class='va'>HalfBath</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-</div>
 <h3 id="데이터-관계-살펴보기">데이터 관계 살펴보기</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -1517,13 +1500,13 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/pairs.html'>pairs</a></span><span class='op'>(</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span> <span class='va'>data</span><span class='op'>$</span><span class='va'>LotArea</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>X1stFlrSF</span>,<span class='va'>data</span><span class='op'>$</span><span class='va'>GarageArea</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>TotRmsAbvGrd</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>TotBath</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>TtoS</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>SalePrice</span><span class='op'>)</span>, panel<span class='op'>=</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span><span class='op'>{</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/pairs.html'>pairs</a></span><span class='op'>(</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span> <span class='va'>data</span><span class='op'>$</span><span class='va'>LotArea</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>GrLivArea</span>,<span class='va'>data</span><span class='op'>$</span><span class='va'>GarageArea</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>TotRmsAbvGrd</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>Fullbath</span>, <span class='va'>data</span><span class='op'>$</span><span class='va'>SalePrice</span><span class='op'>)</span>, panel<span class='op'>=</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span><span class='op'>{</span>
   <span class='fu'><a href='https://rdrr.io/r/graphics/points.html'>points</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>
   <span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>~</span><span class='va'>x</span><span class='op'>)</span>, col<span class='op'>=</span><span class='st'>'red'</span><span class='op'>)</span><span class='op'>}</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<p><img src="hwhouseprice_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+<p><img src="hwhouseprice_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
 <h3 id="회귀분석-수행">회귀분석 수행</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1532,7 +1515,7 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>houseprice</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>SalePrice</span> <span class='op'>~</span> <span class='va'>LotArea</span> <span class='op'>+</span> <span class='va'>X1stFlrSF</span> <span class='op'>+</span> <span class='va'>GarageArea</span> <span class='op'>+</span> <span class='va'>TotRmsAbvGrd</span> <span class='op'>+</span> <span class='va'>TotBath</span> <span class='op'>+</span> <span class='va'>TtoS</span>, data <span class='op'>=</span> <span class='va'>data</span> <span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>houseprice</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>SalePrice</span> <span class='op'>~</span> <span class='va'>LotArea</span> <span class='op'>+</span> <span class='va'>GrLivArea</span> <span class='op'>+</span> <span class='va'>GarageArea</span> <span class='op'>+</span> <span class='va'>TotRmsAbvGrd</span> <span class='op'>+</span> <span class='va'>FullBath</span> , data <span class='op'>=</span> <span class='va'>data</span> <span class='op'>)</span>
 
 <span class='va'>houseprice</span>
 </code></pre>
@@ -1540,14 +1523,14 @@ Show code
 </details>
 <pre><code>
 Call:
-lm(formula = SalePrice ~ LotArea + X1stFlrSF + GarageArea + TotRmsAbvGrd + 
-    TotBath + TtoS, data = data)
+lm(formula = SalePrice ~ LotArea + GrLivArea + GarageArea + TotRmsAbvGrd + 
+    FullBath, data = data)
 
 Coefficients:
- (Intercept)       LotArea     X1stFlrSF    GarageArea  TotRmsAbvGrd  
-  -1.969e+04     4.796e-01     5.560e+01     7.906e+01     1.041e+04  
-     TotBath          TtoS  
-   1.895e+04    -5.569e+02  </code></pre>
+ (Intercept)       LotArea     GrLivArea    GarageArea  TotRmsAbvGrd  
+  -2290.5870        0.5149       81.8568      126.8958    -5741.8546  
+    FullBath  
+  19903.6172  </code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -1581,28 +1564,27 @@ Show code
 </details>
 <pre><code>
 Call:
-lm(formula = SalePrice ~ LotArea + X1stFlrSF + GarageArea + TotRmsAbvGrd + 
-    TotBath + TtoS, data = data)
+lm(formula = SalePrice ~ LotArea + GrLivArea + GarageArea + TotRmsAbvGrd + 
+    FullBath, data = data)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--443535  -22890   -3200   17860  371139 
+-483286  -22211   -1466   19238  333084 
 
 Coefficients:
                Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  -1.969e+04  6.439e+03  -3.057 0.002274 ** 
-LotArea       4.796e-01  1.275e-01   3.763 0.000175 ***
-X1stFlrSF     5.560e+01  3.833e+00  14.504  &lt; 2e-16 ***
-GarageArea    7.906e+01  7.203e+00  10.976  &lt; 2e-16 ***
-TotRmsAbvGrd  1.041e+04  9.236e+02  11.266  &lt; 2e-16 ***
-TotBath       1.895e+04  1.763e+03  10.751  &lt; 2e-16 ***
-TtoS         -5.569e+02  5.131e+01 -10.852  &lt; 2e-16 ***
+(Intercept)  -2290.5870  5712.2348  -0.401 0.688482    
+LotArea          0.5149     0.1326   3.884 0.000107 ***
+GrLivArea       81.8568     4.8735  16.796  &lt; 2e-16 ***
+GarageArea     126.8958     6.8767  18.453  &lt; 2e-16 ***
+TotRmsAbvGrd -5741.8546  1398.8366  -4.105 4.27e-05 ***
+FullBath     19903.6172  3027.5488   6.574 6.80e-11 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 45590 on 1453 degrees of freedom
-Multiple R-squared:  0.672, Adjusted R-squared:  0.6706 
-F-statistic: 496.1 on 6 and 1453 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 48510 on 1454 degrees of freedom
+Multiple R-squared:  0.6284,    Adjusted R-squared:  0.6271 
+F-statistic: 491.7 on 5 and 1454 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <h3 id="회귀모형-진단">회귀모형 진단</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1616,7 +1598,32 @@ Show code
 </code></pre>
 </div>
 </details>
-<p><img src="hwhouseprice_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+<p><img src="hwhouseprice_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<strong>데이터 수정</strong> SalePrice 로그변환
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>houseprice_log</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>SalePrice</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>LotArea</span> <span class='op'>+</span> <span class='va'>GrLivArea</span> <span class='op'>+</span> <span class='va'>GarageArea</span> <span class='op'>+</span> <span class='va'>TotRmsAbvGrd</span> <span class='op'>+</span> <span class='va'>FullBath</span> , data <span class='op'>=</span> <span class='va'>data</span> <span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>houseprice_log</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="hwhouseprice_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <h3 id="test-파일을-모형에-채택한-변수만-select해서-data를-살펴보자.">test 파일을 모형에 채택한 변수만 select해서 data를 살펴보자.</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1626,30 +1633,30 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test2</span> <span class='op'>&lt;-</span> <span class='va'>test</span> <span class='op'>%&gt;%</span>
-        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Id</span>, <span class='va'>LotArea</span>, <span class='va'>X1stFlrSF</span>, <span class='va'>GarageArea</span>, <span class='va'>TotRmsAbvGrd</span>, <span class='va'>TotBath</span>, <span class='va'>TtoS</span><span class='op'>)</span>
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Id</span>, <span class='va'>LotArea</span>, <span class='va'>GrLivArea</span>, <span class='va'>GarageArea</span>, <span class='va'>TotRmsAbvGrd</span>, <span class='va'>FullBath</span><span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>test2</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>       Id          LotArea        X1stFlrSF        GarageArea    
- Min.   :1461   Min.   : 1470   Min.   : 407.0   Min.   :   0.0  
- 1st Qu.:1826   1st Qu.: 7391   1st Qu.: 873.5   1st Qu.: 318.0  
- Median :2190   Median : 9399   Median :1079.0   Median : 480.0  
- Mean   :2190   Mean   : 9819   Mean   :1156.5   Mean   : 472.8  
- 3rd Qu.:2554   3rd Qu.:11518   3rd Qu.:1382.5   3rd Qu.: 576.0  
- Max.   :2919   Max.   :56600   Max.   :5095.0   Max.   :1488.0  
-                                                 NA&#39;s   :1       
-  TotRmsAbvGrd       TotBath           TtoS       
- Min.   : 3.000   Min.   :1.000   Min.   : -1.00  
- 1st Qu.: 5.000   1st Qu.:2.000   1st Qu.:  7.00  
- Median : 6.000   Median :2.000   Median : 34.00  
- Mean   : 6.385   Mean   :2.447   Mean   : 36.41  
- 3rd Qu.: 7.000   3rd Qu.:3.000   3rd Qu.: 55.00  
- Max.   :15.000   Max.   :8.000   Max.   :129.00  
-                  NA&#39;s   :2                       </code></pre>
+<pre><code>       Id          LotArea        GrLivArea      GarageArea    
+ Min.   :1461   Min.   : 1470   Min.   : 407   Min.   :   0.0  
+ 1st Qu.:1826   1st Qu.: 7391   1st Qu.:1118   1st Qu.: 318.0  
+ Median :2190   Median : 9399   Median :1432   Median : 480.0  
+ Mean   :2190   Mean   : 9819   Mean   :1486   Mean   : 472.8  
+ 3rd Qu.:2554   3rd Qu.:11518   3rd Qu.:1721   3rd Qu.: 576.0  
+ Max.   :2919   Max.   :56600   Max.   :5095   Max.   :1488.0  
+                                               NA&#39;s   :1       
+  TotRmsAbvGrd       FullBath    
+ Min.   : 3.000   Min.   :0.000  
+ 1st Qu.: 5.000   1st Qu.:1.000  
+ Median : 6.000   Median :2.000  
+ Mean   : 6.385   Mean   :1.571  
+ 3rd Qu.: 7.000   3rd Qu.:2.000  
+ Max.   :15.000   Max.   :4.000  
+                                 </code></pre>
 </div>
-<p>GarageArea와 TotBath 각각 결측치가 1개와 2개가 있다. 결측치를 제외하도록 하자.</p>
+<p>GarageArea에 1개의 결측치가 있다. 결측치는 제외하도록 하자.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1657,38 +1664,26 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test2</span> <span class='op'>&lt;-</span> <span class='va'>test2</span> <span class='op'>%&gt;%</span>
-        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>GarageArea</span><span class='op'>)</span> <span class='op'>&amp;</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>TotBath</span><span class='op'>)</span><span class='op'>)</span>
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>GarageArea</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>test2</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>       Id          LotArea        X1stFlrSF        GarageArea    
- Min.   :1461   Min.   : 1470   Min.   : 407.0   Min.   :   0.0  
- 1st Qu.:1825   1st Qu.: 7392   1st Qu.: 872.8   1st Qu.: 318.0  
- Median :2190   Median : 9414   Median :1079.5   Median : 480.0  
- Mean   :2190   Mean   : 9797   Mean   :1155.0   Mean   : 472.8  
- 3rd Qu.:2554   3rd Qu.:11516   3rd Qu.:1382.2   3rd Qu.: 576.0  
- Max.   :2919   Max.   :56600   Max.   :5095.0   Max.   :1488.0  
-  TotRmsAbvGrd       TotBath           TtoS       
- Min.   : 3.000   Min.   :1.000   Min.   : -1.00  
- 1st Qu.: 5.000   1st Qu.:2.000   1st Qu.:  7.00  
- Median : 6.000   Median :2.000   Median : 34.00  
- Mean   : 6.384   Mean   :2.448   Mean   : 36.35  
- 3rd Qu.: 7.000   3rd Qu.:3.000   3rd Qu.: 55.00  
- Max.   :15.000   Max.   :8.000   Max.   :129.00  </code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>test2</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>[1] 1456    7</code></pre>
+<pre><code>       Id          LotArea        GrLivArea      GarageArea    
+ Min.   :1461   Min.   : 1470   Min.   : 407   Min.   :   0.0  
+ 1st Qu.:1825   1st Qu.: 7390   1st Qu.:1117   1st Qu.: 318.0  
+ Median :2190   Median : 9414   Median :1431   Median : 480.0  
+ Mean   :2190   Mean   : 9820   Mean   :1486   Mean   : 472.8  
+ 3rd Qu.:2554   3rd Qu.:11519   3rd Qu.:1721   3rd Qu.: 576.0  
+ Max.   :2919   Max.   :56600   Max.   :5095   Max.   :1488.0  
+  TotRmsAbvGrd       FullBath    
+ Min.   : 3.000   Min.   :0.000  
+ 1st Qu.: 5.000   1st Qu.:1.000  
+ Median : 6.000   Median :2.000  
+ Mean   : 6.385   Mean   :1.571  
+ 3rd Qu.: 7.000   3rd Qu.:2.000  
+ Max.   :15.000   Max.   :4.000  </code></pre>
 </div>
 <h3 id="predict해서-test2에-변수-saleprice를-추가하자">Predict해서 test2에 변수 SalePrice를 추가하자</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1703,16 +1698,15 @@ Show code
 </code></pre>
 </div>
 </details>
-<pre><code>Rows: 1,456
-Columns: 8
+<pre><code>Rows: 1,458
+Columns: 7
 $ Id           &lt;int&gt; 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468,…
 $ LotArea      &lt;int&gt; 11622, 14267, 13830, 9978, 5005, 10000, 7980, 8…
-$ X1stFlrSF    &lt;int&gt; 896, 1329, 928, 926, 1280, 763, 1187, 789, 1341…
+$ GrLivArea    &lt;int&gt; 896, 1329, 1629, 1604, 1280, 1655, 1187, 1465, …
 $ GarageArea   &lt;int&gt; 730, 312, 482, 470, 506, 440, 420, 393, 506, 52…
 $ TotRmsAbvGrd &lt;int&gt; 5, 6, 6, 7, 5, 7, 6, 7, 5, 4, 5, 5, 6, 6, 4, 10…
-$ TotBath      &lt;int&gt; 1, 2, 3, 3, 2, 3, 3, 3, 3, 2, 3, 2, 2, 3, 1, 3,…
-$ TtoS         &lt;int&gt; 49, 52, 13, 12, 18, 17, 18, 12, 20, 40, 11, 39,…
-$ SalePrice    &lt;dbl&gt; 137105.38, 157086.90, 188688.68, 196743.92, 173…</code></pre>
+$ FullBath     &lt;int&gt; 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2,…
+$ SalePrice    &lt;dbl&gt; 160865.8, 138887.5, 204695.4, 193400.9, 180370.…</code></pre>
 </div>
 <h3 id="submission파일-저장">Submission파일 저장</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -1729,7 +1723,7 @@ Show code
 </div>
 </details>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
