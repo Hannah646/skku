@@ -24,7 +24,7 @@ test <- read.csv("test.csv")
 ### 데이터 관계 살펴보기
 
 ```{r}
-pairs( cbind( data$LotArea, data$GrLivArea,data$GarageArea, data$TotRmsAbvGrd, data$Fullbath, data$SalePrice), panel=function(x,y){
+pairs( cbind( data$LotArea, data$GrLivArea, data$GarageArea, data$TotRmsAbvGrd, data$FullBath, data$SalePrice), panel=function(x,y){
   points(x,y)
   abline(lm(y~x), col='red')})
 ```
