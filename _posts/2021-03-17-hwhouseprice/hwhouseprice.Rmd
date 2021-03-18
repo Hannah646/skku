@@ -1,7 +1,7 @@
 ---
 title: "HousePrice"
 description: |
-  A short description of the post.
+  SalePrice Prediction
 author:
   - name: Soo Yean Jung
     url: {}
@@ -9,7 +9,7 @@ date: 03-17-2021
 output:
   distill::distill_article:
     self_contained: false
-    code_folding: hide
+    code_folding: TRUE
 ---
 
 ### 데이터 준비
