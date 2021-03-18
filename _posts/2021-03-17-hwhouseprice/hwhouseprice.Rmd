@@ -75,8 +75,7 @@ GarageArea에 1개의 결측치가 있다.
 결측치는 제외하도록 하자.
 
 ```{r}
-test2 <- test2 %>%
-        filter(!is.na(GarageArea))
+test2$GarageArea <- ifelse(is.na(test2$GarageArea),0, test2$GarageArea)
 
 summary(test2)
 ```
@@ -86,7 +85,7 @@ summary(test2)
 
 ```{r}
 test2 <- test2 %>%
-        mutate(SalePrice = predict(houseprice, newdata = test2, type = "response")) %>% 
+        mutate(SalePrice = exp(predict(houseprice_log, newdata = test2, type = "response"))) %>% 
         glimpse()
 ```
 ### Submission파일 저장
