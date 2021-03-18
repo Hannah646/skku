@@ -1,0 +1,99 @@
+---
+title: "HousePrice"
+description: |
+  A short description of the post.
+author:
+  - name: Soo Yean Jung
+    url: {}
+date: 03-17-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: hide
+---
+
+### 데이터 준비
+```{r data}
+library(readxl)
+library(dplyr)
+data <- read.csv("train.csv")
+test <- read.csv("test.csv")
+```
+
+```{r}
+data <- data %>%
+        mutate(TtoS = YrSold - YearBuilt,
+               TotBath = BsmtFullBath + BsmtHalfBath + FullBath + HalfBath)
+
+test <- test %>%
+        mutate(TtoS = YrSold - YearBuilt,
+               TotBath = BsmtFullBath + BsmtHalfBath + FullBath + HalfBath)
+
+```
+
+### 데이터 관계 살펴보기
+
+```{r}
+pairs( cbind( data$LotArea, data$X1stFlrSF,data$GarageArea, data$TotRmsAbvGrd, data$TotBath, data$TtoS, data$SalePrice), panel=function(x,y){
+  points(x,y)
+  abline(lm(y~x), col='red')})
+```
+
+### 회귀분석 수행
+```{r regression model}
+houseprice <- lm(SalePrice ~ LotArea + X1stFlrSF + GarageArea + TotRmsAbvGrd + TotBath + TtoS, data = data )
+
+houseprice
+```
+
+
+```{r summary}
+qt(0.025, 85)
+qt(0.975, 85)
+summary(houseprice)
+```
+
+### 회귀모형 진단
+
+``` {r}
+par(mfrow=c(2,2))
+plot(houseprice)
+```
+
+
+### test 파일을 모형에 채택한 변수만 select해서 data를 살펴보자.
+
+```{r}
+test2 <- test %>%
+        select(Id, LotArea, X1stFlrSF, GarageArea, TotRmsAbvGrd, TotBath, TtoS)
+
+summary(test2)
+```
+GarageArea와 TotBath 각각 결측치가 1개와 2개가 있다.
+결측치를 제외하도록 하자.
+
+```{r}
+test2 <- test2 %>%
+        filter(!is.na(GarageArea) & !is.na(TotBath))
+
+summary(test2)
+```
+```{r}
+dim(test2)
+```
+
+### Predict해서 test2에 변수 SalePrice를 추가하자
+
+```{r}
+test2 <- test2 %>%
+        mutate(SalePrice = predict(houseprice, newdata = test2, type = "response")) %>% 
+        glimpse()
+```
+### Submission파일 저장
+
+```{r}
+submission <- test2 %>% 
+              select(Id, SalePrice)
+
+write.csv(submission,"submission.csv")
+```
